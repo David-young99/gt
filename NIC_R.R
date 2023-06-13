@@ -12,7 +12,9 @@ library(sf)
 google_key <- "AIzaSyDxJ0OUg3vzg1YakrbDVPJ7zDocoeztPDc"
 
 #Temp folder for automatic temporally files elimination
-temp_folder = file.path("////tmp/RtmpV7kR6m/")
+temp_folder <- paste0(tempdir(), "/cache_nic", Sys.getpid())
+options(googleAuthR.cache = cache_folder)
+
 
 #Paths
 in_path_shp = file.path("/home/dyoung/Github_Reps/googletraffic/Archivo_CA/adm_by_country/")
