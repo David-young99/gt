@@ -17,7 +17,7 @@ options(googleAuthR.cache = temp_folder)
 
 
 #Paths
-in_path_shp = file.path("/home/dyoung/Github_Reps/googletraffic/Archivo_CA/adm_by_country/")
+in_path_shp = file.path("/home/dyoung/Github_Reps/gt/Archivo_CA/adm_by_country/")
 out_path_shp = file.path("/home/dyoung/outputs/")
 
 country = "CRI"
