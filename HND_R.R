@@ -36,37 +36,8 @@ for (j in 1:nrow(valid_shp)){
   
   raster_path <- paste0(out_path_shp, rep(country, length(adm_code)), "//", country, "_", adm_code, ".tif")
   
-  tryCatch(
-    {
       writeRaster(raster_gt, raster_path, overwrite=TRUE)
-      
-      # Verificar si el archivo se exportó correctamente
-      if (file.exists(raster_path)) {
-        cat("File", country,"exported done:", "\n")
-        cat("")
-        cat("")
-        
-        
-        
-        #Delete the files created temporally
-        temp_files = list.files(temp_folder, full.names = TRUE, recursive = TRUE)
-        file.remove(temp_files)
-        unlink(temp_folder, recursive = TRUE)
-        
-        cat("Temporal files for", country, " was deleted sucessfully to save memory!", "\n")
-        cat("")
-        cat("")
-      } else {
-        cat("Error exporting the raster so we can't delete the temporal files", "\n")
-        cat("")
-        cat("")
-      }
-    },
-    error = function(e)
-      cat("Error writing the output raster", e$message, "\n") #Catching possible errors
     
-    
-  )
 }
 
 
