@@ -16,7 +16,7 @@ temp_folder = file.path("////tmp/RtmpPE6LtK/")
 
 #Paths
 in_path_shp = file.path("/home/dyoung/Github_Reps/googletraffic/Archivo_CA/adm_by_country/")
-out_path_shp = file.path("//home/dyoung/Github_Reps/googletraffic/Output_raster/")
+out_path_shp = file.path("//home/dyoung/outputs/")
 
 country = "HND"
 
