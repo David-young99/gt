@@ -15,7 +15,7 @@ google_key <- "AIzaSyDxJ0OUg3vzg1YakrbDVPJ7zDocoeztPDc"
 temp_folder = file.path("////tmp/RtmpV7kR6m/")
 
 #Paths
-in_path_shp = file.path("/home/dyoung/Github_Reps/gt/Archivo_CA/adm_by_country/")
+in_path_shp = file.path("/home/dyoung/gitrepo/gt/Archivo_CA/adm_by_country/")
 out_path_shp = file.path("/home/dyoung/outputs/")
 
 country = "SLV"
