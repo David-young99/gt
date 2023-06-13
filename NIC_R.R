@@ -13,7 +13,7 @@ google_key <- "AIzaSyDxJ0OUg3vzg1YakrbDVPJ7zDocoeztPDc"
 
 #Temp folder for automatic temporally files elimination
 temp_folder <- paste0(tempdir(), "/cache_nic", Sys.getpid())
-options(googleAuthR.cache = cache_folder)
+options(googleAuthR.cache = temp_folder)
 
 
 #Paths
