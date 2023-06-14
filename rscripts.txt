@@ -1,0 +1,6 @@
+Rscript GTM_R.R & disown
+Rscript SLV_R.R & disown
+Rscript HND_R.R & disown
+Rscript NIC_R.R & disown
+Rscript CRI_R.R & disown
+Rscript PAN_R.R & disown
