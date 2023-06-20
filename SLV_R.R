@@ -12,11 +12,15 @@ library(sf)
 google_key <- "AIzaSyDxJ0OUg3vzg1YakrbDVPJ7zDocoeztPDc"
 
 #Temp folder for automatic temporally files elimination
-temp_folder = file.path("////tmp/RtmpV7kR6m/")
+#temp_folder = file.path("////tmp/RtmpV7kR6m/")
 
 #Paths
 in_path_shp = file.path("/home/dyoung/gitrepo/gt/Archivo_CA/adm_by_country/")
 out_path_shp = file.path("/home/dyoung/outputs/")
+
+#Paths
+#in_path_shp = file.path("C:\Users\XPC\Desktop\a\country_shp\adm_by_country")
+#out_path_shp = file.path("C:\Users\XPC\Desktop\a\country_shp\RASTERS_BY_COUNTRY\SLV")
 
 country = "SLV"
 
