@@ -12,8 +12,8 @@ library(sf)
 google_key <- "AIzaSyDxJ0OUg3vzg1YakrbDVPJ7zDocoeztPDc"
 
 #Temp folder for automatic temporally files elimination
-temp_folder <- paste0(tempdir(), "/cache_nic", Sys.getpid())
-options(googleAuthR.cache = temp_folder)
+#temp_folder <- paste0(tempdir(), "/cache_nic", Sys.getpid())
+#options(googleAuthR.cache = temp_folder)
 
 
 #Paths
@@ -21,6 +21,10 @@ in_path_shp = file.path("/home/dyoung/gitrepo/gt/Archivo_CA/adm_by_country/")
 out_path_shp = file.path("/home/dyoung/outputs/")
 
 country = "NIC"
+
+#Paths
+#in_path_shp = file.path("C:\\Users\\XPC\\Desktop\\a\\country_shp\\adm_by_country\\")
+#out_path_shp = paste0("C:\\Users\\XPC\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\Output_raster\\")
 
 shp = st_read(paste(in_path_shp, country,".shp",sep = ""))
 valid_shp = st_make_valid(shp)

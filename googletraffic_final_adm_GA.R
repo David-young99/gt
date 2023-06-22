@@ -18,9 +18,7 @@ google_key <- "AIzaSyDxJ0OUg3vzg1YakrbDVPJ7zDocoeztPDc"
 in_path_shp = file.path("/home/dyoung/Github_Reps/googletraffic/Archivo_CA/adm_by_country/")
 out_path_shp = file.path("//home/dyoung/Github_Reps/googletraffic/Output_raster/")
 
-#Paths
-#in_path_shp = file.path("C:\Users\XPC\Desktop\a\country_shp\adm_by_country")
-#out_path_shp = file.path("C:\Users\XPC\Desktop\a\country_shp\RASTERS_BY_COUNTRY\SLV")
+
 
 #Country list index
 cod_countries = c("GTM", "SLV", "HND", "NIC", "CRI", "PAN")

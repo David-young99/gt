@@ -18,11 +18,12 @@ google_key <- "AIzaSyDxJ0OUg3vzg1YakrbDVPJ7zDocoeztPDc"
 in_path_shp = file.path("/home/dyoung/gitrepo/gt/Archivo_CA/adm_by_country/")
 out_path_shp = file.path("/home/dyoung/outputs/")
 
-#Paths
-#in_path_shp = file.path("C:\Users\XPC\Desktop\a\country_shp\adm_by_country")
-#out_path_shp = file.path("C:\Users\XPC\Desktop\a\country_shp\RASTERS_BY_COUNTRY\SLV")
-
 country = "SLV"
+
+#Paths
+#Paths
+#in_path_shp = file.path("C:\\Users\\XPC\\Desktop\\a\\country_shp\\adm_by_country\\")
+#out_path_shp = paste0("C:\\Users\\XPC\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\Output_raster\\")
 
 shp = st_read(paste(in_path_shp, country,".shp",sep = ""))
 valid_shp = st_make_valid(shp)
@@ -36,7 +37,7 @@ for (j in 1:nrow(valid_shp)){
                                            google_key = google_key)
   adm_code = adm$ADM1_PCODE
   
-  raster_path <- paste0(out_path_shp, rep(country, length(adm_code)), "//", country, "_", adm_code, ".tif")
+  raster_path <- paste0(out_path_shp, rep(country, length(adm_code)), "\\", country, "_", adm_code, ".tif")
   
       writeRaster(raster_gt, raster_path, overwrite=TRUE)
 }
