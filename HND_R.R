@@ -23,8 +23,8 @@ out_path_shp = file.path("/home/dyoung/outputs/")
 country = "HND"
 
 #Paths
-#in_path_shp = file.path("C:\\Users\\XPC\\Desktop\\a\\country_shp\\adm_by_country\\")
-#out_path_shp = paste0("C:\\Users\\XPC\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\Output_raster\\")
+in_path_shp = file.path("C:\\Users\\David\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\Archivo_CA\\adm_by_country\\")
+out_path_shp = paste0("C:\\Users\\David\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\Output_raster\\")
 
 shp = st_read(paste(in_path_shp, country,".shp",sep = ""))
 valid_shp = st_make_valid(shp)

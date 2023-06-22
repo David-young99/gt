@@ -1,21 +1,19 @@
 library(doParallel)
 library(foreach)
 
-#GTM = file.path("C:\\Users\\XPC\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\GTM_R.R")
-#SLV = file.path("C:\\Users\\XPC\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\SLV_R.R")
-#HND = file.path("C:\\Users\\XPC\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\HND_R.R")
-#NIC = file.path("C:\\Users\\XPC\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\NIC_R.R")
-#CRI = file.path("C:\\Users\\XPC\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\CRI_R.R")
-#PAN = file.path("C:\\Users\\XPC\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\PAN_R.R")
+GTM = file.path("C:\\Users\\David\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\GTM_R.R")
+SLV = file.path("C:\\Users\\David\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\SLV_R.R")
+HND = file.path("C:\\Users\\David\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\HND_R.R")
+NIC = file.path("C:\\Users\\David\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\NIC_R.R")
 
-GTM = file.path("/home/dyoung/gitrepo/gt/GTM_R.R")
-SLV = file.path("/home/dyoung/gitrepo/gt/SLV_R.R")
-HND = file.path("/home/dyoung/gitrepo/gt/HND_R.R")
-NIC = file.path("/home/dyoung/gitrepo/gt/NIC_R.R")
-CRI = file.path("/home/dyoung/gitrepo/gt/CRI_R.R")
-PAN = file.path("/home/dyoung/gitrepo/gt/PAN_R.R")
+#GTM = file.path("/home/dyoung/gitrepo/gt/GTM_R.R")
+#SLV = file.path("/home/dyoung/gitrepo/gt/SLV_R.R")
+#HND = file.path("/home/dyoung/gitrepo/gt/HND_R.R")
+#NIC = file.path("/home/dyoung/gitrepo/gt/NIC_R.R")
+#CRI = file.path("/home/dyoung/gitrepo/gt/CRI_R.R")
+#PAN = file.path("/home/dyoung/gitrepo/gt/PAN_R.R")
 
-archivos = c(GTM, SLV, HND, NIC, CRI, PAN)
+archivos = c(GTM, SLV, HND, NIC)
 
 
 cl <- makeCluster(detectCores())

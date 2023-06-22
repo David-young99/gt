@@ -34,7 +34,7 @@ for (j in 1:nrow(valid_shp)){
   adm = valid_shp[j, ]
   
   raster_gt <- gt_make_raster_from_polygon(polygon    = adm,
-                                           zoom       = 18,
+                                           zoom       = 15,
                                            google_key = google_key)
   adm_code = adm$ADM1_PCODE
   
