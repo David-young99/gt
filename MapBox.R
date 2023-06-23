@@ -1,31 +1,44 @@
-## Load package
+## Load packages
+#Mapbox is for the API facilities and settings
+#Library sf allow to edit, modify, export geospatial files, in this case a GeoJSON or Shapefile
 library(mapboxapi)
 library(sf)
 
-## Set API key
+## Set API key (This API key must be with the Mapbox account based on the GeoAdaptive google account)
 mapbox_key <- "pk.eyJ1IjoiZGF2aWR5b3VuZzk5IiwiYSI6ImNsaWFyeHdhMzA1amMzZm41YWVpYTYyemgifQ.NZPJzAEOskXC_UJiyxmosg"
 
 
-## Grab shapefile of Manhattan
-pol <- st_read("C:\\Users\\XPC\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\Archivo_CA\\CA.shp")
-ny_sf <- st_make_valid(pol)
+##Uncomment this path if you are running the code in windows (please change the path for your computer)
+  
+input_path = "C:\\Users\\David\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\Archivo_CA\\"
+output_path = "C\\Users\\David\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\Ouputs\\traffic_congestion_vect\\"
 
-## Query traffic data
-nyc_cong_poly <- get_vector_tiles(
+##Uncomment this path if you are running the code in VM (If you are using the GeoAdaptive GCP Instance do not change)
+
+input_path = ""
+output_path = ""
+
+
+## Grab shapefile, in this case I'm using just the Central America Shapefile
+raw_polygon <- st_read(paste0(input_path, "CA.shp"))
+ca_polygon <- st_make_valid(raw_polygon)
+
+## Query traffic data using googletraffic library methods (pay attention to the zoom, this will be the road congestion data detail: more zoom more detail but more processing time)
+ca_conf_poly <- get_vector_tiles(      # From here, the code gets the data in tiles for later vector exportation
   tileset_id = "mapbox.mapbox-traffic-v1",
-  location = ny_sf,
+  location = ca_polygon,
   zoom = 8,
   access_token = mapbox_key
 )$traffic
 
-## Map
-nyc_cong_poly <- nyc_cong_poly %>%
+## Get from mapbox the data based on the previous settings and the 4 different traffic levels
+ca_conf_poly <- ca_conf_poly %>%
   mutate(congestion = congestion %>% 
            tools::toTitleCase() %>%
            factor(levels = c("Low", "Moderate", "Heavy", "Severe")))
 
-## Export to GeoJSON
-st_write(nyc_cong_poly, "C:\\Users\\XPC\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\Archivo_CA\\geojson_test", driver = "GeoJSON", append = TRUE)
+## Export to GeoJSON (un-comment in case that you want export in this format)
+#st_write(ca_conf_poly, output_path, geojson_test", driver = "GeoJSON", append = TRUE)
 
 ## Export to Shapefile
-st_write(nyc_cong_poly, "C:\\Users\\XPC\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\Archivo_CA\\shp_test", driver = "ESRI Shapefile", append = TRUE)
+st_write(ca_conf_poly, output_path, "CA_Vector road", driver = "ESRI Shapefile", append = TRUE)
