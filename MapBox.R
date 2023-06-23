@@ -2,6 +2,8 @@
 #Mapbox is for the API facilities and settings
 #Library sf allow to edit, modify, export geospatial files, in this case a GeoJSON or Shapefile
 library(mapboxapi)
+library(googletraffic)
+library(dplyr)
 library(sf)
 
 ## Set API key (This API key must be with the Mapbox account based on the GeoAdaptive google account)
@@ -10,13 +12,13 @@ mapbox_key <- "pk.eyJ1IjoiZGF2aWR5b3VuZzk5IiwiYSI6ImNsaWFyeHdhMzA1amMzZm41YWVpYT
 
 ##Uncomment this path if you are running the code in windows (please change the path for your computer)
   
-input_path = "C:\\Users\\David\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\Archivo_CA\\"
-output_path = "C\\Users\\David\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\Ouputs\\traffic_congestion_vect\\"
+#input_path = "C:\\Users\\David\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\Archivo_CA\\"
+#output_path = "C:\\Users\\David\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\Ouputs\\traffic_congestion_vect\\"
 
 ##Uncomment this path if you are running the code in VM (If you are using the GeoAdaptive GCP Instance do not change)
 
-input_path = ""
-output_path = ""
+input_path = "/home/dyoung/gitrepo/gt/Archivo_CA/"
+output_path = "/home/dyoung/gitrepo/gt/Ouputs/"
 
 
 ## Grab shapefile, in this case I'm using just the Central America Shapefile
@@ -27,7 +29,7 @@ ca_polygon <- st_make_valid(raw_polygon)
 ca_conf_poly <- get_vector_tiles(      # From here, the code gets the data in tiles for later vector exportation
   tileset_id = "mapbox.mapbox-traffic-v1",
   location = ca_polygon,
-  zoom = 8,
+  zoom = 11,
   access_token = mapbox_key
 )$traffic
 
