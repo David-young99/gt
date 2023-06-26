@@ -17,7 +17,7 @@ mapbox_key <- "pk.eyJ1IjoiZHlvdW5nOTkiLCJhIjoiY2xqY3Zpaml6MjRsazNxcWcybGk3aGczdi
 
 ##Un/comment this path if you are running the code in VM (If you are using the GeoAdaptive GCP Instance do not change)
 
-nput_path = "/home/dyoung/gitrepo/gt/Archivo_CA/"
+input_path = "/home/dyoung/gitrepo/gt/Archivo_CA/"
 output_path = "/home/dyoung/gitrepo/gt/Ouputs/"
 
 
