@@ -7,17 +7,17 @@ library(dplyr)
 library(sf)
 
 ## Set API key (This API key must be with the Mapbox account based on the GeoAdaptive google account)
-mapbox_key <- "pk.eyJ1IjoiZGF2aWR5b3VuZzk5IiwiYSI6ImNsaWFyeHdhMzA1amMzZm41YWVpYTYyemgifQ.NZPJzAEOskXC_UJiyxmosg"
+mapbox_key <- "pk.eyJ1IjoiZHlvdW5nOTkiLCJhIjoiY2xqY3Zpaml6MjRsazNxcWcybGk3aGczdiJ9.30a_QLXc7Obxj3Ugx7lJAg"
 
 
-##Uncomment this path if you are running the code in windows (please change the path for your computer)
+##Un/comment this path if you are running the code in windows (please change the path for your computer)
   
-#input_path = "C:\\Users\\David\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\Archivo_CA\\"
-#output_path = "C:\\Users\\David\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\Ouputs\\traffic_congestion_vect\\"
+#input_path = "C:\\Users\\XPC\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\Archivo_CA\\"
+#output_path = "C:\\Users\\XPC\\OneDrive - Universidad de Costa Rica\\Personal\\Scripts\\R Studio\\gt\\Ouputs\\traffic_congestion_vect\\"
 
-##Uncomment this path if you are running the code in VM (If you are using the GeoAdaptive GCP Instance do not change)
+##Un/comment this path if you are running the code in VM (If you are using the GeoAdaptive GCP Instance do not change)
 
-input_path = "/home/dyoung/gitrepo/gt/Archivo_CA/"
+nput_path = "/home/dyoung/gitrepo/gt/Archivo_CA/"
 output_path = "/home/dyoung/gitrepo/gt/Ouputs/"
 
 
@@ -29,7 +29,7 @@ ca_polygon <- st_make_valid(raw_polygon)
 ca_conf_poly <- get_vector_tiles(      # From here, the code gets the data in tiles for later vector exportation
   tileset_id = "mapbox.mapbox-traffic-v1",
   location = ca_polygon,
-  zoom = 11,
+  zoom = 13,
   access_token = mapbox_key
 )$traffic
 
@@ -43,4 +43,4 @@ ca_conf_poly <- ca_conf_poly %>%
 #st_write(ca_conf_poly, output_path, geojson_test", driver = "GeoJSON", append = TRUE)
 
 ## Export to Shapefile
-st_write(ca_conf_poly, output_path, "CA_Vector road", driver = "ESRI Shapefile", append = TRUE)
+st_write(ca_conf_poly, output_path, "CA_Vector_roadv2", driver = "ESRI Shapefile", append = TRUE)
