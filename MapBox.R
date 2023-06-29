@@ -2,7 +2,6 @@
 #Mapbox is for the API facilities and settings
 #Library sf allow to edit, modify, export geospatial files, in this case a GeoJSON or Shapefile
 library(mapboxapi)
-library(googletraffic)
 library(dplyr)
 library(sf)
 
@@ -29,7 +28,7 @@ ca_polygon <- st_make_valid(raw_polygon)
 ca_conf_poly <- get_vector_tiles(      # From here, the code gets the data in tiles for later vector exportation
   tileset_id = "mapbox.mapbox-traffic-v1",
   location = ca_polygon,
-  zoom = 13,
+  zoom = 7,
   access_token = mapbox_key
 )$traffic
 
