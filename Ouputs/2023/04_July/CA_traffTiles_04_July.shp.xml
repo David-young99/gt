@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="es"><Esri><CreaDate>20230711</CreaDate><CreaTime>08545100</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process Name="Add Field (2)" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\AddField" Date="20230711" Time="085451">AddField CA_traffTiles_04_July vweight_1 "Float (32-bit floating point)" # # # vweight_first NULLABLE NON_REQUIRED #</Process><Process Name="Calculate Field" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\CalculateField" Date="20230711" Time="085451">CalculateField CA_traffTiles_04_July vweight_1 congestion_to_numeric(!congestion!) "Python 3" "def congestion_to_numeric(congestion):
+    if congestion == "Low":
+        return 0
+    elif congestion == "Moderate":
+        return 0
+    elif congestion == "Severe":
+        return 1
+    elif congestion == "Heavy":
+        return 1
+    else:
+        return 0
+" Text NO_ENFORCE_DOMAINS</Process><Process Name="Join Field" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\JoinField" Date="20230711" Time="085511">JoinField CA_traffTiles_04_July FID 2 FID # "Select transfer fields" #</Process><Process Name="Add Field (2)" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\AddField" Date="20230711" Time="085611">AddField CA_traffTiles_04_July vweight_1 "Float (32-bit floating point)" # # # vweight_first NULLABLE NON_REQUIRED #</Process><Process Name="Calculate Field" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\CalculateField" Date="20230711" Time="085611">CalculateField CA_traffTiles_04_July vweight_1 congestion_to_numeric(!congestion!) "Python 3" "def congestion_to_numeric(congestion):
+    if congestion == "Low":
+        return 0
+    elif congestion == "Moderate":
+        return 0
+    elif congestion == "Severe":
+        return 1
+    elif congestion == "Heavy":
+        return 1
+    else:
+        return 0
+" Text NO_ENFORCE_DOMAINS</Process><Process Name="Join Field" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\JoinField" Date="20230711" Time="085612">JoinField CA_traffTiles_04_July FID 2 FID # "Select transfer fields" #</Process><Process Name="Add Field (2)" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\AddField" Date="20230711" Time="092028">AddField CA_traffTiles_04_July vweight_1 "Float (32-bit floating point)" # # # vweight_first NULLABLE NON_REQUIRED #</Process><Process Name="Calculate Field" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\CalculateField" Date="20230711" Time="092028">CalculateField CA_traffTiles_04_July vweight_1 congestion_to_numeric(!congestion!) "Python 3" "def congestion_to_numeric(congestion):
+    if congestion == "Low":
+        return 0
+    elif congestion == "Moderate":
+        return 0
+    elif congestion == "Severe":
+        return 1
+    elif congestion == "Heavy":
+        return 1
+    else:
+        return 0
+" Text NO_ENFORCE_DOMAINS</Process><Process Name="Join Field" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\JoinField" Date="20230711" Time="092028">JoinField CA_traffTiles_04_July FID 2 FID vweight_2 "Select transfer fields" #</Process><Process Name="Join Field" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\JoinField" Date="20230711" Time="092147">JoinField CA_traffTiles_04_July FID 2 FID vweight_2 "Select transfer fields" #</Process><Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\JoinField" Date="20230711" Time="093420">JoinField CA_traffTiles_04_July FID 2 FID vweight_2 "Select transfer fields" #</Process><Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\UpdateSchema" Date="20230711" Time="093455">UpdateSchema "CIMDATA=&lt;CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;WorkspaceConnectionString&gt;DATABASE=C:\Users\David\Dropbox (GeoAdaptive)\2022_INI-04_DEVELOPMENT DASHBOARD\DOCS\Project development\R code\Traffic Congestion Indicator\gt\Ouputs\2023\04_July&lt;/WorkspaceConnectionString&gt;&lt;WorkspaceFactory&gt;Shapefile&lt;/WorkspaceFactory&gt;&lt;Dataset&gt;CA_traffTiles_04_July.shp&lt;/Dataset&gt;&lt;DatasetType&gt;esriDTFeatureClass&lt;/DatasetType&gt;&lt;/CIMStandardDataConnection&gt;" &lt;operationSequence&gt;&lt;workflow&gt;&lt;DeleteField&gt;&lt;field_name&gt;class_1&lt;/field_name&gt;&lt;field_name&gt;congesti_1&lt;/field_name&gt;&lt;field_name&gt;vweight_2&lt;/field_name&gt;&lt;field_name&gt;class_12&lt;/field_name&gt;&lt;field_name&gt;congesti_2&lt;/field_name&gt;&lt;field_name&gt;vweight_23&lt;/field_name&gt;&lt;field_name&gt;vweight_24&lt;/field_name&gt;&lt;field_name&gt;vweight_25&lt;/field_name&gt;&lt;field_name&gt;vweight_26&lt;/field_name&gt;&lt;/DeleteField&gt;&lt;/workflow&gt;&lt;/operationSequence&gt;</Process><Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\JoinField" Date="20230711" Time="093459">JoinField CA_traffTiles_04_July FID 2 FID vweight_2 "Select transfer fields" #</Process><Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\JoinField" Date="20230711" Time="093654">JoinField CA_traffTiles_04_July FID 3 FID vweight_3;vweight_4 "Select transfer fields" #</Process><Process Name="Add Field (2)" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\AddField" Date="20230711" Time="101005">AddField CA_traffTiles_04_July vweight_1 "Float (32-bit floating point)" # # # vweight_first NULLABLE NON_REQUIRED #</Process><Process Name="Calculate Field" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\CalculateField" Date="20230711" Time="101005">CalculateField CA_traffTiles_04_July vweight_1 congestion_to_numeric(!congestion!) "Python 3" "def congestion_to_numeric(congestion):
+    if congestion == "Low":
+        return 0
+    elif congestion == "Moderate":
+        return 0
+    elif congestion == "Severe":
+        return 1
+    elif congestion == "Heavy":
+        return 1
+    else:
+        return 0
+" Text NO_ENFORCE_DOMAINS</Process><Process Name="Join Field" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\JoinField" Date="20230711" Time="101006">JoinField CA_traffTiles_04_July FID 2 FID vweight_2 "Select transfer fields" #</Process><Process Name="Join Field (3)" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\JoinField" Date="20230711" Time="101139">JoinField CA_traffTiles_04_July FID 3 FID vweight_3;vweight_4 "Select transfer fields" #</Process><Process Name="Add Field (8)" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\AddField" Date="20230711" Time="101140">AddField CA_traffTiles_04_July vweight "Float (32-bit floating point)" # # # # NULLABLE NON_REQUIRED #</Process><Process Name="Calculate Field (8)" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\CalculateField" Date="20230711" Time="101140">CalculateField CA_traffTiles_04_July vweight ($feature.vweight_1+$feature.vweight_2+$feature.vweight_3+$feature.vweight_4)/4 Arcade # "Float (32-bit floating point)" NO_ENFORCE_DOMAINS</Process><Process Name="Add Field (2)" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\AddField" Date="20230711" Time="101916">AddField CA_traffTiles_04_July vweight_1 "Float (32-bit floating point)" # # # vweight_first NULLABLE NON_REQUIRED #</Process><Process Name="Calculate Field" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\CalculateField" Date="20230711" Time="101917">CalculateField CA_traffTiles_04_July vweight_1 congestion_to_numeric(!congestion!) "Python 3" "def congestion_to_numeric(congestion):
+    if congestion == "Low":
+        return 0
+    elif congestion == "Moderate":
+        return 0
+    elif congestion == "Severe":
+        return 1
+    elif congestion == "Heavy":
+        return 1
+    else:
+        return 0
+" Text NO_ENFORCE_DOMAINS</Process><Process Name="Join Field" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\JoinField" Date="20230711" Time="101918">JoinField CA_traffTiles_04_July FID 2 FID vweight_2 "Select transfer fields" #</Process><Process Name="Join Field (3)" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\JoinField" Date="20230711" Time="101920">JoinField CA_traffTiles_04_July FID 3 FID vweight_3;vweight_4 "Select transfer fields" #</Process><Process Name="Add Field (8)" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\AddField" Date="20230711" Time="101920">AddField CA_traffTiles_04_July vweight "Float (32-bit floating point)" # # # # NULLABLE NON_REQUIRED #</Process><Process Name="Calculate Field (8)" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\CalculateField" Date="20230711" Time="101920">CalculateField CA_traffTiles_04_July vweight ($feature.vweight_1+$feature.vweight_2+$feature.vweight_3+$feature.vweight_4)/4 Arcade # "Float (32-bit floating point)" NO_ENFORCE_DOMAINS</Process><Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\AddFields" Date="20230711" Time="101921">AddFields CA_traffTiles_04_July "Length DOUBLE # # # #" #</Process><Process Name="Calculate Geometry Attributes" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\CalculateGeometryAttributes" Date="20230711" Time="101921">CalculateGeometryAttributes CA_traffTiles_04_July "Length LENGTH_GEODESIC" Kilometers # GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]] "Same as input"</Process><Process Name="Add Field (3)" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\AddField" Date="20230711" Time="101921">AddField CA_traffTiles_04_July index "Float (32-bit floating point)" # # # # NULLABLE NON_REQUIRED #</Process><Process Name="Calculate Field (2)" ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\CalculateField" Date="20230711" Time="101922">CalculateField CA_traffTiles_04_July index $feature.Length*$feature.vweight Arcade # Text NO_ENFORCE_DOMAINS</Process></lineage></DataProperties></Esri></metadata>

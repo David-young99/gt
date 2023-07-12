@@ -62,7 +62,7 @@ ca_polygon <- st_make_valid(raw_polygon)
 ca_conf_poly <- get_vector_tiles(      # From here, the code gets the data in tiles for later vector exportation
   tileset_id = "mapbox.mapbox-traffic-v1",
   location = ca_polygon,
-  zoom = 7,
+  zoom = 14,
   access_token = mapbox_key
 )$traffic
 
