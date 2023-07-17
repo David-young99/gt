@@ -35,8 +35,8 @@ mapbox_key <- "pk.eyJ1IjoiZGF2aWR5ZmxvbCIsImEiOiJjamdyNmRqMnAwMzBhMnhsb2oyNWx0aW
 
 ##Un/comment this path if you are running the code in VM (If you are using the GeoAdaptive GCP Instance do not change)
 
-input_path = "/home/dyoung/gitrepo/gt/Archivo_CA/"
-output_pathyear = paste0("/home/dyoung/gitrepo/gt/Ouputs/", year)
+input_path = "/home/dyoung/gitrepos/gt/Archivo_CA/"
+output_pathyear = paste0("/home/dyoung/gitrepos/gt/Ouputs/", year)
 output_pathdate = paste0(output_pathyear, da_te)
 
   
