@@ -40,7 +40,7 @@ output_pathyear = paste0("/home/dyoung/gitrepos/gt/Ouputs/", year)
 output_pathdate = paste0(output_pathyear, da_te)
 
   
-output_path = paste0("/home/dyoung/gitrepo/gt/Ouputs/", year, "/", da_te, "/")
+output_path = paste0("/home/dyoung/gitrepos/gt/Ouputs/", year, "/", da_te, "/")
 
 
 if (dir.exists(output_pathyear)){
