@@ -20,7 +20,7 @@ da_te = paste0(day, "_", month)
 
 
 ## Set API key (This API key must be with the Mapbox account based on the GeoAdaptive google account)
-mapbox_key <- "pk.eyJ1IjoiZGF2aWR5ZmxvbCIsImEiOiJjamdyNmRqMnAwMzBhMnhsb2oyNWx0aWk4In0.Zw_q8QejxpFOcuJJ_lWwjA"
+mapbox_key <- "pk.eyJ1IjoiZGFkdWljIiwiYSI6ImNsazc0NGx5MjAwcmQzbm40cXIxZHllZzUifQ.DlIgTGw0cKZvPjGQeNjXlQ"
 
 
 ##Un/comment this path if you are running the code in windows (please change the path for your computer)
@@ -51,7 +51,7 @@ if (dir.exists(output_pathyear)){
   print("New year folder created, ¡Happy new year!")
 }
 
-dir.create(da_te)
+dir.create(output_path)
 
 
 ## Grab shapefile, in this case I'm using just the Central America Shapefile
