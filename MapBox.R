@@ -17,10 +17,12 @@ year = format(current_date, "%Y")
 
 da_te = paste0(day, "_", month)
 
+hora_actual <- format(Sys.time(), format = "%H:%M:%S")
+
 
 
 ## Set API key (This API key must be with the Mapbox account based on the GeoAdaptive google account)
-mapbox_key <- "pk.eyJ1IjoiZGFkdWljIiwiYSI6ImNsazc0NGx5MjAwcmQzbm40cXIxZHllZzUifQ.DlIgTGw0cKZvPjGQeNjXlQ"
+mapbox_key <- "pk.eyJ1IjoiZGF2aWR5ZiIsImEiOiJjbGthNTE4NnowMzRpM2ZueGJka20yMjZiIn0.KGPQB2F1WXgmBKsNNzU8Kg"
 
 
 ##Un/comment this path if you are running the code in windows (please change the path for your computer)
@@ -77,3 +79,4 @@ ca_conf_poly <- ca_conf_poly %>%
 
 ## Export to Shapefile
 st_write(ca_conf_poly, output_path, paste0("CA_traffTiles_", da_te), driver = "ESRI Shapefile", append = TRUE)
+print(paste0("Exported in: ", da_te, ", hour: ", hora_actual))
