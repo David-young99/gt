@@ -17,10 +17,12 @@ year = format(current_date, "%Y")
 
 da_te = paste0(day, "_", month)
 
+hora_actual <- format(Sys.time(), format = "%H:%M:%S")
+
 
 
 ## Set API key (This API key must be with the Mapbox account based on the GeoAdaptive google account)
-mapbox_key <- "pk.eyJ1IjoiZGF2aWR5ZmxvbCIsImEiOiJjamdyNmRqMnAwMzBhMnhsb2oyNWx0aWk4In0.Zw_q8QejxpFOcuJJ_lWwjA"
+mapbox_key <- "pk.eyJ1IjoiZGFyZG85MyIsImEiOiJjbGttcnI0NmswbmNwM2VtdjYzeTF1bWI3In0.rGczuUVhhVqO3WzKajrLSA"
 
 
 ##Un/comment this path if you are running the code in windows (please change the path for your computer)
@@ -35,12 +37,12 @@ mapbox_key <- "pk.eyJ1IjoiZGF2aWR5ZmxvbCIsImEiOiJjamdyNmRqMnAwMzBhMnhsb2oyNWx0aW
 
 ##Un/comment this path if you are running the code in VM (If you are using the GeoAdaptive GCP Instance do not change)
 
-input_path = "/home/dyoung/gitrepo/gt/Archivo_CA/"
-output_pathyear = paste0("/home/dyoung/gitrepo/gt/Ouputs/", year)
+input_path = "/home/dyoung/gitrepos/gt/Archivo_CA/"
+output_pathyear = paste0("/home/dyoung/gitrepos/gt/Ouputs/", year)
 output_pathdate = paste0(output_pathyear, da_te)
 
   
-output_path = paste0("/home/dyoung/gitrepo/gt/Ouputs/", year, "/", da_te, "/")
+output_path = paste0("/home/dyoung/gitrepos/gt/Ouputs/", year, "/", da_te, "/")
 
 
 if (dir.exists(output_pathyear)){
@@ -51,7 +53,7 @@ if (dir.exists(output_pathyear)){
   print("New year folder created, ¡Happy new year!")
 }
 
-dir.create(da_te)
+dir.create(output_path)
 
 
 ## Grab shapefile, in this case I'm using just the Central America Shapefile
@@ -77,3 +79,4 @@ ca_conf_poly <- ca_conf_poly %>%
 
 ## Export to Shapefile
 st_write(ca_conf_poly, output_path, paste0("CA_traffTiles_", da_te), driver = "ESRI Shapefile", append = TRUE)
+print(paste0("Exported in: ", da_te, ", hour: ", hora_actual))
